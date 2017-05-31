@@ -7,3 +7,23 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+#inscriptionForm {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 5%;
+}
+
+.radioButton {
+    padding-left: 1vh;
+}
+
+#connexionForm {
+    padding-left: 39%;
+    padding-right: 39%;
+    padding-top: 10%;
+}
+
+#cardProfile {
+    margin-left: 33%;
+}
