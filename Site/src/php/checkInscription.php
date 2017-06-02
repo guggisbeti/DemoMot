@@ -9,10 +9,15 @@ session_start();
 
 include "include/head.php";
 
+$id = $_SESSION['user'];
+$type = $_GET['type'];
+
 $name = $_POST['name'];
 $firstname = $_POST['firstname'];
 $age = $_POST['age'];
 $email = $_POST['email'];
+$login = $_POST['login'];
+$password = $_POST['password'];
 if(isset($_POST['friendOf']) == 1) {
     $friendOf = $_POST['friendOf'];
 }
@@ -20,17 +25,15 @@ else
 {
     echo 'Le bouton radio "Vous êtes l\'ami de" est obligatoire, veuillez le remplir.<br>';
     ?>
-    <meta http-equiv="refresh" content="3; URL=inscription.php?name=<?php echo $name ?>&firstname=<?php echo $firstname ?>&age=<?php echo $age ?>&email=<?php echo $email ?>">
+    <meta http-equiv="refresh" content="3; URL=inscription.php?type=reTry&login=<?php echo $login ?>&friendOf=<?php echo $friendOf ?>&name=<?php echo $name ?>&firstname=<?php echo $firstname ?>&age=<?php echo $age ?>&email=<?php echo $email ?>">
     <?php
 }
-$login = $_POST['login'];
-$password = $_POST['password'];
 
 if($name == "" || $firstname == "" || $age == "" || $email == "" || $login == "" || $password == "" )
 {
     echo "Certains champs sont vides, veuillez les remplir.";
     ?>
-    <meta http-equiv="refresh" content="3; URL=inscription.php?name=<?php echo $name ?>&firstname=<?php echo $firstname ?>&age=<?php echo $age ?>&email=<?php echo $email ?>">
+    <meta http-equiv="refresh" content="3; URL=inscription.php?type=reTry&login=<?php echo $login ?>&friendOf=<?php echo $friendOf ?>&name=<?php echo $name ?>&firstname=<?php echo $firstname ?>&age=<?php echo $age ?>&email=<?php echo $email ?>">
     <?php
 }
 else
@@ -41,7 +44,7 @@ else
     {
         echo 'Le champ "Nom" est mal écrit<br>';
         ?>
-        <meta http-equiv="refresh" content="3; URL=inscription.php?name=<?php echo $name ?>&firstname=<?php echo $firstname ?>&age=<?php echo $age ?>&email=<?php echo $email ?>">
+        <meta http-equiv="refresh" content="3; URL=inscription.php?type=reTry&login=<?php echo $login ?>&friendOf=<?php echo $friendOf ?>&name=<?php echo $name ?>&firstname=<?php echo $firstname ?>&age=<?php echo $age ?>&email=<?php echo $email ?>">
         <?php
         $check = false;
     }
@@ -49,7 +52,7 @@ else
     {
         echo 'Le champ "Prénom" est mal écrit<br>';
         ?>
-        <meta http-equiv="refresh" content="3; URL=inscription.php?name=<?php echo $name ?>&firstname=<?php echo $firstname ?>&age=<?php echo $age ?>&email=<?php echo $email ?>">
+        <meta http-equiv="refresh" content="3; URL=inscription.php?type=reTry&login=<?php echo $login ?>&friendOf=<?php echo $friendOf ?>&name=<?php echo $name ?>&firstname=<?php echo $firstname ?>&age=<?php echo $age ?>&email=<?php echo $email ?>">
         <?php
         $check = false;
     }
@@ -57,7 +60,7 @@ else
     {
         echo 'Le champ "Age" est mal écrit<br>';
         ?>
-        <meta http-equiv="refresh" content="3; URL=inscription.php?name=<?php echo $name ?>&firstname=<?php echo $firstname ?>&age=<?php echo $age ?>&email=<?php echo $email ?>">
+        <meta http-equiv="refresh" content="3; URL=inscription.php?type=reTry&login=<?php echo $login ?>&friendOf=<?php echo $friendOf ?>&name=<?php echo $name ?>&firstname=<?php echo $firstname ?>&age=<?php echo $age ?>&email=<?php echo $email ?>">
         <?php
         $check = false;
     }
@@ -65,26 +68,37 @@ else
     {
         echo 'Le champ "Adresse e-mail" est mal écrit<br>';
         ?>
-        <meta http-equiv="refresh" content="3; URL=inscription.php?name=<?php echo $name ?>&firstname=<?php echo $firstname ?>&age=<?php echo $age ?>&email=<?php echo $email ?>">
+        <meta http-equiv="refresh" content="3; URL=inscription.php?type=reTry&login=<?php echo $login ?>&friendOf=<?php echo $friendOf ?>&name=<?php echo $name ?>&firstname=<?php echo $firstname ?>&age=<?php echo $age ?>&email=<?php echo $email ?>">
         <?php
         $check = false;
     }
 
-    if($check = true)
+    if($check == true)
     {
         $pass = password_hash($password, PASSWORD_DEFAULT);
 
         $connector = new PDOLink();
 
-        //2ème : Faire la requête
-        //Inserer la requête dans un variable "query"
-        $query = "INSERT INTO `t_user`(`useLogin`, `usePassword`, `useName`, `useFirstName`, `useAge`, `useEmail`, `useFriendOf`, `IsAdmin`) VALUES ('$login','$pass','$name','$firstname',$age,'$email',$friendOf,0)";
-
+        if($type == "reTry" || $type == "inscription") {
+            //2ème : Faire la requête
+            //Inserer la requête dans un variable "query"
+            $query = "INSERT INTO `t_user`(`useLogin`, `usePassword`, `useName`, `useFirstName`, `useAge`, `useEmail`, `useFriendOf`, `IsAdmin`) VALUES ('$login','$pass','$name','$firstname',$age,'$email',$friendOf,0)";
+        }
+        elseif($type == "modify") {
+            $query = "UPDATE `t_user` SET `useLogin`='$login',`usePassword`='$pass',`useName`='$name',`useFirstName`='$firstname',`useAge`='$age',`useEmail`='$email',`useFriendOf`=$friendOf WHERE idUser=$id";
+        }
         //Lance la requête
         $req = $connector->executeQuery($query);
 
-        echo "Les données ont été insérées";
-
+        if($type == "reTry" || $type == "inscription") {
+            echo "Les données ont été insérées";
+        }
+        elseif($type == "modify") {
+            echo "Les données ont été changée correctement";
+        }
+        ?>
+        <meta http-equiv="refresh" content="3; URL=index.php">
+        <?php
         //Ecrase la requête
         $connector->closeCursor($req);
         //Stop la connexion

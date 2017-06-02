@@ -9,6 +9,7 @@ session_start();
 
 $_SESSION['connected'] = 0;
 $_SESSION['admin'] = 0;
+$_SESSION['user'] = 0;
 ?>
 <meta http-equiv="refresh" content="0; URL=index.php">
 

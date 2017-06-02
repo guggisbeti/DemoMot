@@ -89,15 +89,10 @@ include "include/nav.php";
                             </table>
                             <?php
                         }
-
-                        //Ecrase la requête
-                        $connector->closeCursor($req);
-                        //Stop la connexion
-                        $connector->destructObject();
                     ?>
                 </div>
                 <div class="card-action">
-                    <a class="red-text text-lighten-1" href="inscription.php">éditer</a>
+                    <a class="red-text text-lighten-1" href="inscription.php?type=modify&login=<?php echo $pass['useLogin'] ?>&friendOf=<?php echo $pass['useFriendOf'] ?>&name=<?php echo $pass['useName'] ?>&firstname=<?php echo $pass['useFirstName'] ?>&age=<?php echo $pass['useAge'] ?>&email=<?php echo $pass['useEmail'] ?>">éditer</a>
                     <a class="red-text text-lighten-1"2 href="reservation.php">Réserver une plage horaire</a>
                 </div>
             </div>
@@ -110,5 +105,9 @@ include "include/nav.php";
 <!-- Compiled and minified JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
 <?php
+//Ecrase la requête
+$connector->closeCursor($req);
+//Stop la connexion
+$connector->destructObject();
 include "include/footer.php";
 ?>

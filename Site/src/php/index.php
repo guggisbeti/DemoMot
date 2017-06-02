@@ -28,7 +28,7 @@ session_start();
                         <h5 class="header col s12 light">Vous êtes sur le site de réservation du chalet Yamilé</h5>
                     </div>
                     <div class="row center">
-                        <a href="inscription.php" id="download-button" class="btn-large waves-effect waves-light blue-grey darken-2">S'inscrire</a>
+                        <a href="inscription.php?type=inscription" id="download-button" class="btn-large waves-effect waves-light blue-grey darken-2">S'inscrire</a>
                     </div>
                     <br><br>
 					<!-- Slider materialize -->

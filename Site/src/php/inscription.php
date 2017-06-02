@@ -19,53 +19,63 @@ include "include/nav.php";
 ?>
 <main>
     <?php
+    if($_GET['type'] == "modify" || $_GET['type'] == "reTry")
+    {
+        $name = $_GET['name'];
+        $firstname = $_GET['firstname'];
+        $age = $_GET['age'];
+        $email = $_GET['email'];
+        $friendOf = $_GET['friendOf'];
+        $login = $_GET['login'];
+    }
+    $type = $_GET['type'];
     ?>
     <div class="row">
-        <form class="col s12" id="inscriptionForm" action="checkInscription.php" method="post">
+        <form class="col s12" id="inscriptionForm" action="checkInscription.php?type=<?php echo $type ?>" method="post">
             <div class="row">
                 <h3 class="red-text text-darken-4">Inscription</h3>
                 <div class="row">
                         <div class="input-field col s6">
-                            <input id="name" type="text" name="name" class="validate">
+                            <input <?php if($_GET['type'] == "modify" || $_GET['type'] == "reTry"){ echo "value=\"$name\""; }?> id="name" type="text" name="name" class="validate">
                             <label for="name">Nom*</label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="firstname" type="text" name="firstname" class="validate">
+                            <input <?php if($_GET['type'] == "modify" || $_GET['type'] == "reTry"){ echo "value=\"$firstname\""; }?> id="firstname" type="text" name="firstname" class="validate">
                             <label for="firstname">Prénom*</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="input-field col s6">
-                            <input id="age" type="text" name="age" class="validate">
+                            <input <?php if($_GET['type'] == "modify" || $_GET['type'] == "reTry"){ echo "value=\"$age\""; }?> id="age" type="text" name="age" class="validate">
                             <label for="age">Age*</label>
                         </div>
                         <div class="input-field col s6">
-                            <input id="email" type="text" name="email" class="validate">
+                            <input <?php if($_GET['type'] == "modify" || $_GET['type'] == "reTry"){ echo "value=\"$email\""; }?> id="email" type="text" name="email" class="validate">
                             <label for="email">Adresse e-mail*</label>
                         </div>
                     </div>
                     <div class="radioButton">
                         <p class="grey-text">Vous êtes l'ami de* :</p>
                         <p>
-                            <input name="friendOf" type="radio" id="test1" value="1"/>
+                            <input <?php if($_GET['type'] == "modify" && $friendOf == 1 || $_GET['type'] == "reTry" && $friendOf == 1){ echo "checked=\"checked\""; }?> name="friendOf" type="radio" id="test1" value="1"/>
                             <label for="test1">Magali Nunez</label>
                         </p>
                         <p>
-                            <input name="friendOf" type="radio" id="test2" value="2"/>
+                            <input <?php if($_GET['type'] == "modify" && $friendOf == 2 || $_GET['type'] == "reTry" && $friendOf == 2){ echo "checked=\"checked\""; }?> name="friendOf" type="radio" id="test2" value="2"/>
                             <label for="test2">Blaise Guggisberg</label>
                         </p>
                         <p>
-                            <input name="friendOf" type="radio" id="test3" value="3"/>
+                            <input <?php if($_GET['type'] == "modify" && $friendOf == 3 || $_GET['type'] == "reTry" && $friendOf == 3){ echo "checked=\"checked\""; }?> name="friendOf" type="radio" id="test3" value="3"/>
                             <label for="test3">Yves Guggisberg</label>
                         </p>
                         <p>
-                            <input name="friendOf" type="radio" id="test4" value="4"/>
+                            <input <?php if($_GET['type'] == "modify" && $friendOf == 4 || $_GET['type'] == "reTry" && $friendOf == 4){ echo "checked=\"checked\""; }?> name="friendOf" type="radio" id="test4" value="4"/>
                             <label for="test4">Patrick Guggisberg</label>
                         </p>
                     </div>
                     <div class="row">
                         <div class="input-field col s12">
-                            <input id="login" type="text" name="login" class="validate">
+                            <input <?php if($_GET['type'] == "modify"|| $_GET['type'] == "reTry"){ echo "value=\"$login\""; }?> id="login" type="text" name="login" class="validate">
                             <label for="login">Login*</label>
                         </div>
                     </div>
