@@ -11,8 +11,6 @@ if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['end']) && 
 	$color = $_POST['color'];
 
 	$sql = "INSERT INTO events(title, start, end, color) values ('$title', '$start', '$end', '$color')";
-	//$req = $bdd->prepare($sql);
-	//$req->execute();
 	
 	echo $sql;
 	
@@ -27,8 +25,26 @@ if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['end']) && 
 	 die ('Erreur execute');
 	}
 
-}
-header('Location: '.$_SERVER['HTTP_REFERER']);
+	if($_GET['type'] == "reservation") {
+		include 'include/PDOLink.php';
+		$id = $_GET['id'];
+		$connector = new PDOLink();
 
+		//2ème : Faire la requête
+		//Inserer la requête dans un variable "query"
+		$query = "DELETE FROM `t_resevation` WHERE idReservation = $id";
+
+		//Lance la requête
+		$req = $connector->executeQuery($query);
+
+		//Ecrase la requête
+		$connector->closeCursor($req);
+		//Stop la connexion
+		$connector->destructObject();
+	}
+
+
+}
+header('Location: indexCalendar.php');
 	
 ?>

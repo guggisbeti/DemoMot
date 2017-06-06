@@ -18,8 +18,6 @@ session_start();
         include "include/nav.php";
     ?>
         <main>
-            <?php
-            ?>
             <div class="section no-pad-bot" id="index-banner">
                 <div class="container">
                     <br><br>

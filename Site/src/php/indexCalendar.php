@@ -42,8 +42,7 @@ include "include/nav.php";
 		<!-- Modal -->
 		<div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
-			<div class="modal-content">
-			<form class="form-horizontal" method="POST" action="addEvent.php">
+			<form class="form-horizontal" method="POST" action="addEvent.php?type=admin">
 			
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -54,7 +53,7 @@ include "include/nav.php";
 				  <div class="form-group">
 					<label for="title" class="col-sm-2 control-label">Titre</label>
 					<div class="col-sm-10">
-					  <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+					  <input type="text" name="title" class="form-control" id="title" placeholder="Titre">
 					</div>
 				  </div>
 				  <div class="form-group">
@@ -62,13 +61,10 @@ include "include/nav.php";
 					<div class="col-sm-10">
 					  <select name="color" class="form-control" id="color">
 						  <option value="">Couleur</option>
-						  <option style="color:#0071c5;" value="#0071c5">&#9724; Bleu foncé</option>
-						  <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
-						  <option style="color:#008000;" value="#008000">&#9724; Vert</option>
-						  <option style="color:#FFD700;" value="#FFD700">&#9724; Jaune</option>
-						  <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
-						  <option style="color:#FF0000;" value="#FF0000">&#9724; Rouge</option>
-						  <option style="color:#000;" value="#000">&#9724; Noir</option>
+						  <option value="#0071c5">Blaise Guggisberg - Bleu</option>
+						  <option value="#40E0D0">Yves Guggisberg - Turquoise</option>
+						  <option value="#FF0000">Patrick Guggisberg - Rouge</option>
+						  <option value="#008000">Magali Nunez - Vert</option>
 						  
 						</select>
 					</div>
@@ -101,7 +97,6 @@ include "include/nav.php";
 		<!-- Modal -->
 		<div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
-			<div class="modal-content">
 			<form class="form-horizontal" method="POST" action="editEventTitle.php">
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -120,14 +115,10 @@ include "include/nav.php";
 					<div class="col-sm-10">
 					  <select name="color" class="form-control" id="color">
 						  <option value="">Couleur</option>
-						  <option style="color:#0071c5;" value="#0071c5">&#9724; Bleu foncé</option>
-						  <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
-						  <option style="color:#008000;" value="#008000">&#9724; Vert</option>
-						  <option style="color:#FFD700;" value="#FFD700">&#9724; Jaune</option>
-						  <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
-						  <option style="color:#FF0000;" value="#FF0000">&#9724; Rouge</option>
-						  <option style="color:#000;" value="#000">&#9724; Noir</option>
-						  
+						  <option value="#0071c5">Blaise Guggisberg - Bleu</option>
+						  <option value="#40E0D0">Yves Guggisberg - Turquoise</option>
+						  <option value="#FF0000">Patrick Guggisberg - Rouge</option>
+						  <option value="#008000">Magali Nunez - Vert</option>
 						</select>
 					</div>
 				  </div>
@@ -172,7 +163,7 @@ include "include/nav.php";
 			header: {
 				left: 'prev,next today',
 				center: 'title',
-				right: 'month'
+				right: ''
 			},
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
