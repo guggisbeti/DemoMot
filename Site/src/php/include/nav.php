@@ -38,6 +38,7 @@
             </ul>
             <?php
         }
+        //S'il n'est pas connecté, il est impossible d'utiliser les boutons mais ils sont présent avec un petit logo de cadena
         else
         {
         ?>
@@ -55,6 +56,7 @@
             </ul>
         <?php
         }
+        //S'il est connecté ajoute le bouton deconnexion
         if($_SESSION['connected'] == 1)
         {
             ?>
@@ -64,6 +66,7 @@
 
             <?php
         }
+        //Sinon affiche les bouton connexion et inscription
         else
         {
         ?>

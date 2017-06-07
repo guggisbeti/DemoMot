@@ -20,6 +20,7 @@ include "include/head.php";
     <main>
         <!-- Modal -->
         <div class="row">
+            <!-- Formulaire d'ajout d'un evenement -->
             <form id="inscriptionForm" class="form-horizontal" method="POST" action="addEvent.php?type=reservation&id=<?php echo $_GET['id']; ?>">
                   <h3 class="red-text text-darken-4">Ajouter une réservation</h3>
                   <div class="form-group">
@@ -41,7 +42,9 @@ include "include/head.php";
                     </div>
                   </div>
                     <?php
+                        //Prise de l'id de la réservation
                         $id = $_GET['id'];
+                        //Connexion à la base de données
                         $connector = new PDOLink();
 
                         //2ème : Faire la requête
@@ -51,6 +54,7 @@ include "include/head.php";
                         //Lance la requête
                         $req = $connector->executeQuery($query);
 
+                        //Prépare les données à être affichées
                         $data = $connector->prepareData($req);
 
                         //Foreach pour expliquer les détail de la demande

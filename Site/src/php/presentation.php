@@ -29,7 +29,7 @@ include "include/nav.php";
             </div>
 
             <br><br>
-
+            <!-- Affichage de toutes les images du chalet avec une petite désciption pour chaque photo -->
             <img class="materialboxed left" width="650" height="432" src="../../resources/image/ando.jpg">
             <h1 class="blue-grey-text text-darken-2 left" id="titleGallery">Hello</h1>
             <img class="materialboxed right" width="650" height="432" src="../../resources/image/ando1.jpg">
@@ -41,21 +41,7 @@ include "include/nav.php";
 
         </div>
     </div>
-
-
-    <div class="container">
-        <div class="section">
-
-
-
-        </div>
-        <br><br>
-
-        <div class="section">
-
-        </div>
-    </div>
-
+    <br><br>
 </main>
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

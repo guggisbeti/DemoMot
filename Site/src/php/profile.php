@@ -38,7 +38,9 @@ include "include/nav.php";
                 <div class="card-content white-text">
                     <span class="card-title red-text text-lighten-1">Détails</span>
                     <?php
+                        //Utilisation de la session user ayant l'id de l'utilisateur connecté
                         $id = $_SESSION['user'];
+                        //Instanciation de la classe PDOLink
                         $connector = new PDOLink();
 
                         //2ème : Faire la requête
@@ -48,6 +50,7 @@ include "include/nav.php";
                         //Lance la requête
                         $req = $connector->executeQuery($query);
 
+                        //Préparation de l'affichage des données
                         $data = $connector->prepareData($req);
 
                         //Foreach pour expliquer les détail de l'utilisateur
@@ -57,6 +60,7 @@ include "include/nav.php";
                             <table>
                                 <tr>
                                     <?php
+                                    //Première partie du tableau contenant le nom, le prénom et l'age
                                     ?> <td> <?php echo "Nom : " . $pass['useName'] ; ?> </td> <?php
                                     ?> <td> <?php echo "Prénom : " . $pass['useFirstName']; ?> </td> <?php
                                     ?> <td> <?php echo "Age : " . $pass['useAge']; ?> </td> <?php
@@ -64,9 +68,11 @@ include "include/nav.php";
                                 </tr>
                                 <tr>
                                     <?php
+                                    //Deuxième partie du tableau contenant l'e-mail, le login et l'ami de
                                     ?> <td> <?php echo "E-Mail : " . $pass['useEmail'] ; ?> </td> <?php
                                     ?> <td> <?php echo "Login : " . $pass['useLogin']; ?> </td> <?php
                                     ?> <td> <?php echo "Vous êtes l'ami de ";
+                                                //Prend la bonne valeur afin d'afficher l'ami de qui est l'utilisateur
                                                 if($pass['useFriendOf'] == 1)
                                                 {
                                                     echo "Magali Nunez";

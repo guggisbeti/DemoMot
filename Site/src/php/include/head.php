@@ -4,6 +4,7 @@
     </title>
 
     <?php
+    //Inclusion de la classe PDOLink (connexion PDO a la base de données)
     include "PDOLink.php";
     ?>
     <link rel="icon" type="image/png" href="../../resources/image/guggisberg.ico" />

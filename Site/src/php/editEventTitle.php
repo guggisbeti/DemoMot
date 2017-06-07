@@ -1,6 +1,14 @@
 <?php
+session_start();
+/**
+ * ETML
+ * User: Timothée Guggisberg
+ * Date: 06.06.2017
+ * Brief : Page de modification de la base de donnée si on modifie un evenement depuis le calendrier
+ */
 
 require_once('bdd.php');
+//Si la checkbox delete a une valeur
 if (isset($_POST['delete']) && isset($_POST['id'])){
 	
 	
@@ -8,17 +16,21 @@ if (isset($_POST['delete']) && isset($_POST['id'])){
 	
 	$sql = "DELETE FROM events WHERE id = $id";
 	$query = $bdd->prepare( $sql );
+	//Si la query est fausse
 	if ($query == false) {
 	 print_r($bdd->errorInfo());
 	 die ('Erreur prepare');
 	}
 	$res = $query->execute();
+	//Si l'execution a un problème
 	if ($res == false) {
 	 print_r($query->errorInfo());
 	 die ('Erreur execute');
 	}
 	
-}elseif (isset($_POST['title']) && isset($_POST['color']) && isset($_POST['id'])){
+}
+//Si les champs de la modification ont une valeur
+elseif (isset($_POST['title']) && isset($_POST['color']) && isset($_POST['id'])){
 	
 	$id = $_POST['id'];
 	$title = $_POST['title'];
@@ -28,17 +40,20 @@ if (isset($_POST['delete']) && isset($_POST['id'])){
 
 	
 	$query = $bdd->prepare( $sql );
+	//Si la query est fausse
 	if ($query == false) {
 	 print_r($bdd->errorInfo());
 	 die ('Erreur prepare');
 	}
 	$sth = $query->execute();
+	//Si l'execution a un problème
 	if ($sth == false) {
 	 print_r($query->errorInfo());
 	 die ('Erreur execute');
 	}
 
 }
+//Ramène au calendrier
 header('Location: indexCalendar.php');
 
 	

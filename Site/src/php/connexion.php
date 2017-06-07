@@ -21,16 +21,18 @@ include "include/nav.php";
     <?php
     ?>
     <div class="row">
+        <!-- Formulaire de connexion avec un login et un mot de passe envoyant vers la vérification du formulaire -->
         <form class="col s12" id="connexionForm" action="checkConnexion.php" method="post">
             <div class="row">
                 <h3 class="red-text text-darken-4">Connexion</h3>
-
+                <!-- champ login -->
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="login" type="text" name="login" class="validate">
                         <label for="login">Login</label>
                     </div>
                 </div>
+                <!-- champ mot de passe -->
                 <div class="row">
                     <div class="input-field col s12">
                         <input id="password" type="password" name="password" class="validate">

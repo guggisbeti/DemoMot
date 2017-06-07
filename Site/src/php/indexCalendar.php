@@ -1,13 +1,22 @@
 <?php
 session_start();
+/**
+ * ETML
+ * User: Timothée Guggisberg
+ * Date: 06.06.2017
+ * Brief : Page du calendrier
+ */
 require_once('bdd.php');
 
-
+//Requête SQL
 $sql = "SELECT id, title, start, end, color FROM events ";
 
+//Préparation de l'execution de la requête
 $req = $bdd->prepare($sql);
+//Execution de la requête
 $req->execute();
 
+//Affichage des données
 $events = $req->fetchAll();
 
 ?>
@@ -42,8 +51,8 @@ include "include/nav.php";
 		<!-- Modal -->
 		<div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
+			  <!-- Fomulaire lors de l'insertion d'un event depuis le calendrier -->
 			<form class="form-horizontal" method="POST" action="addEvent.php?type=admin">
-			
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="myModalLabel">Ajouter une réservation</h4>
@@ -97,7 +106,8 @@ include "include/nav.php";
 		<!-- Modal -->
 		<div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
-			<form class="form-horizontal" method="POST" action="editEventTitle.php">
+			  <!-- Fomulaire lors de la modification d'un event depuis le calendrier -->
+			  <form class="form-horizontal" method="POST" action="editEventTitle.php">
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="myModalLabel">Modifier la réservation</h4>
@@ -142,9 +152,6 @@ include "include/nav.php";
 			</div>
 		  </div>
 		</div>
-
-    </div>
-
     <!-- jQuery Version 1.11.1 -->
     <script src="js/jquery.js"></script>
 
@@ -252,7 +259,6 @@ include "include/nav.php";
 	});
 
 </script>
-</div>
 </main>
 <?php
 include "include/footer.php";

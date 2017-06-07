@@ -45,7 +45,9 @@ include "include/nav.php";
                 </thead>
                 <tbody>
                 <?php
+                    //Création de la variable changeant la couleur des boutons 1 fois sur 2 dans le foreach
                     $changeColor = false;
+                    //Instanciation de la classe PDOLink
                     $connector = new PDOLink();
 
                     //2ème : Faire la requête
@@ -65,6 +67,7 @@ include "include/nav.php";
                             <td><?php echo $details['useFirstName'] . " " . $details['useName'] ?></td>
                             <td><?php echo $details['useEmail']?></td>
                             <td><?php
+                                //Changement de la date de YYYY-MM-DD à DD.MM.YYYY
                                 if (strstr($details['resStartDate'], "-"))   {
                                     $date = preg_split("/[\/]|[-]+/", $details['resStartDate']);
                                     $date = $date[2].".".$date[1].".".$date[0];
@@ -72,14 +75,18 @@ include "include/nav.php";
                                 echo $date;
                                 ?></td>
                             <td><?php
+                                //Changement de la date de YYYY-MM-DD à DD.MM.YYYY
                                 if (strstr($details['resEndDate'], "-"))   {
                                     $date = preg_split("/[\/]|[-]+/", $details['resEndDate']);
                                     $date = $date[2].".".$date[1].".".$date[0];
                                 }
-                                echo $date;                                ?></td>
+                                echo $date;
+                                ?></td>
+                            <!-- Bouton changeant de couleur une fois sur deux avec la variable $changeColor -->
                             <td><a href="checkAcceptation.php?id=<?php echo $details['idReservation'] ?>" id="download-button" class="btn waves-effect waves-light <?php if($changeColor == false){echo 'blue-grey darken-2';} else {echo 'red darken-3';} ?>">Accepter</a></td>
                         </tr>
                 <?php
+                        //Si la variable est false de vient true et inversement
                         if($changeColor == false)
                         {
                             $changeColor = true;
