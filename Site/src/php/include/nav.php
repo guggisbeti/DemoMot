@@ -49,7 +49,7 @@
             <li><a href="#"> <i class="material-icons left">lock_outline</i>Présentation du chalet</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
-            <li><a href="#"> <i class="material-icons left">lock_outline</i>Profile</a></li>
+            <li><a href="#"> <i class="material-icons left">lock_outline</i>Profil</a></li>
         </ul>
             <ul class="right hide-on-med-and-down">
                 <li><a href="#"><i class="material-icons left">lock_outline</i>Message</a></li>

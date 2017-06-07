@@ -103,9 +103,20 @@ include "include/nav.php";
                     ?>
                 </div>
                 <div class="card-action">
-                    <a class="red-text text-lighten-1"
-                       href="inscription.php?type=modify&login=<?php echo $pass['useLogin'] ?>&friendOf=<?php echo $pass['useFriendOf'] ?>&name=<?php echo $pass['useName'] ?>&firstname=<?php echo $pass['useFirstName'] ?>&age=<?php echo $pass['useAge'] ?>&email=<?php echo $pass['useEmail'] ?>">éditer</a>
-                    <a class="red-text text-lighten-1" 2 href="reservation.php">Réserver une plage horaire</a>
+                    <a class="red-text text-lighten-1" href="inscription.php?type=modify&login=<?php echo $pass['useLogin'] ?>&friendOf=<?php echo $pass['useFriendOf'] ?>&name=<?php echo $pass['useName'] ?>&firstname=<?php echo $pass['useFirstName'] ?>&age=<?php echo $pass['useAge'] ?>&email=<?php echo $pass['useEmail'] ?>">éditer</a>
+                    <?php
+                        if($_SESSION['admin'] == 0) {
+                            ?>
+                            <a class="red-text text-lighten-1" href="reservation.php">Réserver une plage horaire</a>
+                            <?php
+                        }
+                        else
+                        {
+                            ?>
+                            <a class="red-text text-lighten-1" href="indexCalendar.php">Réserver une plage horaire</a>
+                            <?php
+                        }
+                    ?>
                 </div>
             </div>
         </div>

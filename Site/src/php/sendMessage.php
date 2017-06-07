@@ -8,7 +8,7 @@ session_start();
  */
 
 //Si il n'est pas connecté, renvoi à la page d'accueil
-if($_SESSION['connected'] == 0)
+if($_SESSION['connected'] == 0 || isset($_GET['type']) == 0)
 {
     echo '<meta http-equiv="refresh" content="0; URL=index.php">';
 }
