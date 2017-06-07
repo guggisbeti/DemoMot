@@ -36,6 +36,16 @@ else
 
         ?>
         <meta http-equiv="refresh" content="3; URL=index.php">
+    <div class="preloader-wrapper big active">
+        <div class="spinner-layer spinner-blue">
+            <div class="circle-clipper left">
+                <div class="circle"></div>
+            </div><div class="gap-patch">
+                <div class="circle"></div>
+            </div><div class="circle-clipper right">
+                <div class="circle"></div>
+            </div>
+        </div>
         <?php
 
         //Ecrase la requête

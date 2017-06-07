@@ -6,6 +6,14 @@ session_start();
  * Date: 30.05.2017
  * Brief : Page ayant un formulaire permettant de demander une plage horaire
  */
+
+//Si il n'est pas connecté, renvoi à la page d'accueil
+if($_SESSION['connected'] == 0)
+{
+    echo '<meta http-equiv="refresh" content="0; URL=index.php">';
+}
+else
+{
 ?>
 
 <!DOCTYPE html>
@@ -40,4 +48,5 @@ include "include/nav.php";
 </main>
 <?php
 include "include/footer.php";
+}
 ?>

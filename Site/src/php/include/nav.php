@@ -1,4 +1,4 @@
-<nav class="blue-grey darken-2" role="navigation">
+<nav id="navBar" class="blue-grey darken-2" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="index.php" class="brand-logo">Chalet Yamilé</a>
         <?php
         //Si il est admin (toujours un icone si admin)
@@ -25,7 +25,7 @@
                         <li><a href="reservation.php">Réserver une plage horaire</a></li>
                     </ul>
                     <ul class="right hide-on-med-and-down waves-effect">
-                        <li><a href="sendMessage.php">Envoyer un message</a></li>
+                        <li><a href="sendMessage.php?type=message">Envoyer un message</a></li>
                     </ul>
                     <?php
                 }

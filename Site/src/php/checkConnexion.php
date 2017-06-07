@@ -19,6 +19,16 @@ if($login == "" || $password == "" )
     echo "Certains champs sont vides, veuillez les remplir.";
     ?>
     <meta http-equiv="refresh" content="2; URL=connexion.php">
+    <div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+            <div class="circle"></div>
+        </div><div class="gap-patch">
+            <div class="circle"></div>
+        </div><div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+    </div>
     <?php
 }
 else
@@ -61,16 +71,37 @@ else
             echo "Bonjour " . $pass['useFirstName'] . " " . $pass['useName'] . "<br> Vous allez être redirigé vers la page d'accueil";
             ?>
             <meta http-equiv="refresh" content="2; URL=index.php">
+            <div class="preloader-wrapper big active">
+            <div class="spinner-layer spinner-blue">
+                <div class="circle-clipper left">
+                    <div class="circle"></div>
+                </div><div class="gap-patch">
+                    <div class="circle"></div>
+                </div><div class="circle-clipper right">
+                    <div class="circle"></div>
+                </div>
+            </div>
             <?php
             break;
         }
     }
-        //Si le mot de passe ou le login est inccorect redirection sur la page de connexion
-        echo "Login ou mot de passe incorrect";
-        ?>
-        <meta http-equiv="refresh" content="2; URL=connexion.php">
-        <?php
-
+        if($_SESSION['connected'] == 0) {
+            //Si le mot de passe ou le login est inccorect redirection sur la page de connexion
+            echo "Login ou mot de passe incorrect";
+            ?>
+            <meta http-equiv="refresh" content="2; URL=connexion.php">
+            <div class="preloader-wrapper big active">
+                <div class="spinner-layer spinner-blue">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                        <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            <?php
+        }
 
 
     //Ecrase la requête

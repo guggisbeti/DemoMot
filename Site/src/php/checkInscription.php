@@ -116,7 +116,7 @@ else
             echo "Les données ont été changée correctement";
         }
         ?>
-        <!-- Redirection sur la page d'accueil -->
+        //R
         <meta http-equiv="refresh" content="3; URL=index.php">
         <?php
         //Ecrase la requête

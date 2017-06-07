@@ -61,7 +61,7 @@ include "include/nav.php";
                         </div>
                     </div>
                       <!-- Champ ami de -->
-                    <div class="radioButton">
+                    <div class="radioButton" id="switch">
                         <p class="grey-text">Vous êtes l'ami de* :</p>
                         <p>
                             <input <?php if($_GET['type'] == "modify" && $friendOf == 1 || $_GET['type'] == "reTry" && $friendOf == 1){ echo "checked=\"checked\""; }?> name="friendOf" type="radio" id="test1" value="1"/>

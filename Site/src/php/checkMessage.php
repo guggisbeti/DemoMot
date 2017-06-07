@@ -22,6 +22,15 @@ if($message == "")
     <meta http-equiv="refresh" content="2; URL=sendMessage.php">
     <?php
 }
+//Si le message est plus grand que 600 caractères
+if(!preg_match("#^.{1,600}$#",$message))
+{
+    echo 'Votre message est trop grand (600 caractères maximum)';
+    ?>
+    <meta http-equiv="refresh" content="3; URL=sendMessage.php?type=reTry&message=<?php echo $message ?>">
+    <?php
+}
+
 //Sinon insère le message dans la base de donnée
 else
 {
@@ -46,3 +55,13 @@ else
     echo '<meta http-equiv="refresh" content="2; URL=index.php">';
 }
 ?>
+<div class="preloader-wrapper big active">
+    <div class="spinner-layer spinner-blue">
+        <div class="circle-clipper left">
+            <div class="circle"></div>
+        </div><div class="gap-patch">
+            <div class="circle"></div>
+        </div><div class="circle-clipper right">
+            <div class="circle"></div>
+        </div>
+    </div>

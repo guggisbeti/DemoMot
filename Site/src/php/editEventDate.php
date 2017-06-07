@@ -7,35 +7,42 @@ session_start();
  * Brief : Page de modification de la base de donnée si on bouge de place un evenement
  */
 
-// Connexion à la base de données
-require_once('bdd.php');
+//Si il n'est pas connecté ou pas admin, renvoi à la page d'accueil
+if($_SESSION['connected'] == 0 || $_SESSION['admin'] == 0)
+{
+	echo '<meta http-equiv="refresh" content="0; URL=index.php">';
+}
+else {
 
-//Si tous les éléments sont vide
-if (isset($_POST['Event'][0]) && isset($_POST['Event'][1]) && isset($_POST['Event'][2])){
+	// Connexion à la base de données
+	require_once('bdd.php');
 
-	$id = $_POST['Event'][0];
-	$start = $_POST['Event'][1];
-	$end = $_POST['Event'][2];
+	//Si tous les éléments sont vide
+	if (isset($_POST['Event'][0]) && isset($_POST['Event'][1]) && isset($_POST['Event'][2])) {
 
-	$sql = "UPDATE events SET  start = '$start', end = '$end' WHERE id = $id ";
+		$id = $_POST['Event'][0];
+		$start = $_POST['Event'][1];
+		$end = $_POST['Event'][2];
 
-	
-	$query = $bdd->prepare( $sql );
-	//Si la préparation a un problème
-	if ($query == false) {
-	 print_r($bdd->errorInfo());
-	 die ('Erreur prepare');
-	}
-	$sth = $query->execute();
-	//Si l'execution a un problème
-	if ($sth == false) {
-	 print_r($query->errorInfo());
-	 die ('Erreur execute');
-	}else{
-		die ('OK');
+		$sql = "UPDATE events SET  start = '$start', end = '$end' WHERE id = $id ";
+
+
+		$query = $bdd->prepare($sql);
+		//Si la préparation a un problème
+		if ($query == false) {
+			print_r($bdd->errorInfo());
+			die ('Erreur prepare');
+		}
+		$sth = $query->execute();
+		//Si l'execution a un problème
+		if ($sth == false) {
+			print_r($query->errorInfo());
+			die ('Erreur execute');
+		} else {
+			die ('OK');
+		}
+
 	}
 
 }
-
-	
 ?>
