@@ -7,7 +7,7 @@ session_start();
  * Brief : Page d'envoi de message accessible au utilisateur
  */
 
-//Si il n'est pas connecté, renvoi à la page d'accueil
+//Si il n'est pas connecté, renvoi à la page d'accueil OU si le type étant dans l'URL est NULL, renvoi sur la page d'accueil
 if($_SESSION['connected'] == 0 || isset($_GET['type']) == 0)
 {
     echo '<meta http-equiv="refresh" content="0; URL=index.php">';

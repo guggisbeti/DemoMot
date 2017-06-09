@@ -89,7 +89,7 @@ include "include/nav.php";
                                     <!-- Affichage de l'email -->
                                     <td><?php echo $details['useEmail'] ?></td>
                                     <!-- Bouton de suppression du message en y envoyant l'id -->
-                                    <td><a href="deleteMessage.php?id=<?php echo $details['idMessage'] ?>"
+                                    <td><a onclick="return confirm('Etes-vous sur de vouloir supprimer ce message ?')" href="deleteMessage.php?id=<?php echo $details['idMessage'] ?>"
                                            id="download-button"
                                            class="btn waves-effect waves-light <?php if ($changeColor == false) {
                                                echo 'blue-grey darken-2';

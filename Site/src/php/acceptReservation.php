@@ -49,18 +49,17 @@ include "include/nav.php";
                     <th>Date de début</th>
                     <th>Date de fin</th>
                     <th></th>
+                    <th></th>
                 </tr>
                 </thead>
                 <tbody>
                 <?php
-                //Création de la variable changeant la couleur des boutons 1 fois sur 2 dans le foreach
-                $changeColor = false;
                 //Instanciation de la classe PDOLink
                 $connector = new PDOLink();
 
                 //2ème : Faire la requête
                 //Inserer la requête dans un variable "query"
-                $query = "SELECT `idReservation`, `resStartDate`, `resEndDate`, `resValidate`, `idUser`, `useName`, `useFirstName`, `useEmail` FROM `t_resevation` NATURAL JOIN t_user";
+                $query = "SELECT `idReservation`, `resStartDate`, `resEndDate`, `resValidate`, `idUser`, `useName`, `useFirstName`, `useEmail` FROM `t_resevation` NATURAL JOIN t_user WHERE resValidate = 0";
 
                 //Lance la requête
                 $req = $connector->executeQuery($query);
@@ -92,20 +91,11 @@ include "include/nav.php";
                             ?></td>
                         <!-- Bouton changeant de couleur une fois sur deux avec la variable $changeColor -->
                         <td><a href="checkAcceptation.php?id=<?php echo $details['idReservation'] ?>"
-                               id="download-button"
-                               class="btn waves-effect waves-light <?php if ($changeColor == false) {
-                                   echo 'blue-grey darken-2';
-                               } else {
-                                   echo 'red darken-3';
-                               } ?>">Accepter</a></td>
+                               id="download-button" class="btn waves-effect waves-light blue-grey darken-2">Accepter</a></td>
+                        <td><a onclick="return confirm('Etes-vous sur de vouloir supprimer cette demande ?')" href="deleteReservation.php?id=<?php echo $details['idReservation'] ?>"
+                                id="download-button" class="btn waves-effect waves-light red darken-3">Refuser</a></td>
                     </tr>
                     <?php
-                    //Si la variable est false de vient true et inversement
-                    if ($changeColor == false) {
-                        $changeColor = true;
-                    } else {
-                        $changeColor = false;
-                    }
                 }
                 ?>
                 </tbody>
@@ -113,6 +103,8 @@ include "include/nav.php";
         </div>
     </div>
 </main>
+<br>
+<br>
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 

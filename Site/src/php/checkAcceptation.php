@@ -6,6 +6,8 @@ session_start();
  * Date: 06.06.2017
  * Brief : Page d'insertion des données acceptée par un admin
  */
+
+//Si l'id étant dans l'URL est NULL, renvois sur la page d'accueil
 if(isset($_GET['id']) == 0)
 {
     echo '<meta http-equiv="refresh" content="0; URL=index.php">';
@@ -76,8 +78,14 @@ else {
                     <div class="form-group">
                         <label for="end" class="col-sm-2 control-label">Date de fin</label>
                         <div class="col-sm-10">
+                            <?php
+                                if (strstr($date['resEndDate'], "-")) {
+                                    $date = preg_split("/[\/]|[-]+/", $date['resEndDate']);
+                                    $date = $date[0] . "-" . $date[1] . "-" . ($date[2] + 1);
+                                }
+                            ?>
                             <input type="text" name="end" class="form-control" id="end"
-                                   value="<?php echo $date['resEndDate'] ?>" readonly>
+                                   value="<?php echo $date ?>" readonly>
                         </div>
                     </div>
                     <?php

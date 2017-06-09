@@ -29,7 +29,7 @@
     </div>
     <div class="footer-copyright">
         <div id="copyrightFooter" class="container">
-            Copyright © par Timothée Guggisberg
+            © 2017 Copyright par Timothée Guggisberg
         </div>
 		<div class="container left">
 			<a class="white-text left" href="disconnexion.php">Vidage du cache</a>

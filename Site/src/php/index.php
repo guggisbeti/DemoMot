@@ -34,31 +34,28 @@ session_start();
 					  <div class="slider">
 						<ul class="slides">
 						  <li>
-							<img src="../../resources/image/ando.jpg">
-							<div class="caption center-align">
-							  <h3>This is our big Tagline!</h3>
-							  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-							</div>
-						  </li>
-						  <li>
-							<img src="../../resources/image/ando1.jpg">
+							<img src="../../resources/image/slider1.JPG">
 							<div class="caption left-align">
-							  <h3>Left Aligned Caption</h3>
-							  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+							  <h3>Les Chaux</h3>
+							  <h5 class="light grey-text text-lighten-3">Mer de nuage sur les Chaux</h5>
 							</div>
 						  </li>
 						  <li>
-							<img src="../../resources/image/ando2.jpg">
+							<img src="../../resources/image/slider2.JPG">
+							<div class="caption left-align">
+							  <h3>Anzeindaz</h3>
+							</div>
+						  </li>
+							<li>
+								<img src="../../resources/image/slider4.JPG">
+								<div class="caption right-align">
+									<h3>Miroir d'Argentine</h3>
+								</div>
+							</li>
+						  <li>
+							<img src="../../resources/image/slider3.JPG">
 							<div class="caption right-align">
-							  <h3>Right Aligned Caption</h3>
-							  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
-							</div>
-						  </li>
-						  <li>
-							<img src="../../resources/image/ando3.jpg">
-							<div class="caption center-align">
-							  <h3>This is our big Tagline!</h3>
-							  <h5 class="light grey-text text-lighten-3">Here's our small slogan.</h5>
+							  <h3>Vallée du Miroir d'Argentine</h3>
 							</div>
 						  </li>
 						</ul>

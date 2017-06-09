@@ -22,6 +22,9 @@
                 if($_SESSION['admin'] == 0) {
                     ?>
                     <ul class="right hide-on-med-and-down waves-effect">
+                        <li><a href="indexCalendar.php"><i class="material-icons left">today</i>Calendrier</a></li>
+                    </ul>
+                    <ul class="right hide-on-med-and-down waves-effect">
                         <li><a href="reservation.php">Réserver une plage horaire</a></li>
                     </ul>
                     <ul class="right hide-on-med-and-down waves-effect">
@@ -79,9 +82,55 @@
         <?php
         }
         ?>
+        <!-- Nav de côté si l'écran est trop petit -->
+        <ul id="nav-mobile" class="side-nav">
+            <?php
+            if($_SESSION['admin'] == 1) {
+            ?>
+                <li><a class="btn red darken-3" href="indexCalendar.php">Calendrier</a></li>
+
+                <li><a class="btn red darken-3" href="acceptReservation.php">Réservation</a></li>
+
+                <li><a class="btn red darken-3" href="message.php">Message</a></li>
+                <?php
+                }
+                //Si il est connecté
+                if($_SESSION['connected'] == 1)
+                {
+                //Si il n'est pas admin
+                if($_SESSION['admin'] == 0) {
+                ?>
+                    <li><a class="btn red darken-3" href="indexCalendar.php">Calendrier</a></li>
+
+                    <li><a class="btn red darken-3" href="reservation.php">Réserver une PH</a></li>
+
+                    <li><a class="btn red darken-3" href="sendMessage.php?type=message">Envoyer un message</a></li>
+                <?php
+                }
+                ?>
+                <li><a class="btn red darken-3" href="disconnexion.php">Déconnexion</a></li>
+                <?php
+            }
+            else
+            {
+                ?>
+                <li><a class="btn red darken-3" href="connexion.php">Connexion</a></li>
+
+                <li><a class="btn red darken-3" href="inscription.php?type=inscription">Inscription</a></li>
+                <?php
+            }
+            ?>
+        </ul>
         <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
+
     <script>
-        $(".button-collapse").sideNav();
+        $('.button-collapse').sideNav({
+                menuWidth: 300,
+                edge: 'left',
+                closeOnClick: true,
+                draggable: true
+            }
+        );
     </script>
 </nav>
