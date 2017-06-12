@@ -55,6 +55,7 @@ else
     echo '<meta http-equiv="refresh" content="2; URL=index.php">';
 }
 ?>
+<!-- Chargement -->
 <div class="preloader-wrapper big active">
     <div class="spinner-layer spinner-blue">
         <div class="circle-clipper left">

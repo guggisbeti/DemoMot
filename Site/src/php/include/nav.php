@@ -1,7 +1,7 @@
 <nav id="navBar" class="blue-grey darken-2" role="navigation">
     <div class="nav-wrapper container"><a id="logo-container" href="index.php" class="brand-logo">Chalet Yamilé</a>
         <?php
-        //Si il est admin (toujours un icone si admin)
+        //Si il est admin
         if($_SESSION['admin'] == 1) {
             ?>
             <ul class="right hide-on-med-and-down waves-effect">
@@ -46,16 +46,16 @@
         {
         ?>
         <ul class="right hide-on-med-and-down">
-            <li><a href="#"> <i class="material-icons left">lock_outline</i>Réserver une plage horaire</a></li>
+            <li><a href="#!"> <i class="material-icons left">lock_outline</i>Réserver une plage horaire</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
-            <li><a href="#"> <i class="material-icons left">lock_outline</i>Présentation du chalet</a></li>
+            <li><a href="#!"> <i class="material-icons left">lock_outline</i>Présentation du chalet</a></li>
         </ul>
         <ul class="right hide-on-med-and-down">
-            <li><a href="#"> <i class="material-icons left">lock_outline</i>Profil</a></li>
+            <li><a href="#!"> <i class="material-icons left">lock_outline</i>Profil</a></li>
         </ul>
             <ul class="right hide-on-med-and-down">
-                <li><a href="#"><i class="material-icons left">lock_outline</i>Message</a></li>
+                <li><a href="#!"><i class="material-icons left">lock_outline</i>Message</a></li>
             </ul>
         <?php
         }
@@ -82,7 +82,7 @@
         <?php
         }
         ?>
-        <!-- Nav de côté si l'écran est trop petit -->
+        <!-- Nav de côté si l'écran est trop petit (Téléphone)-->
         <ul id="nav-mobile" class="side-nav">
             <?php
             if($_SESSION['admin'] == 1) {

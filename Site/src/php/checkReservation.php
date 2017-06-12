@@ -13,7 +13,7 @@ $startDate = $_POST['startDate'];
 $endDate = $_POST['endDate'];
 $id = $_POST['id'];
 
-
+//Vérifie si les champs sont vide ou si l'id est = 0 (donc personne)
 if($startDate == "" || $endDate == "" || $id == "" || $id == 0)
 {
     echo "Certains champs sont vides, veuillez les remplir.";
@@ -23,6 +23,7 @@ if($startDate == "" || $endDate == "" || $id == "" || $id == 0)
 }
 else
 {
+    //Connexion à la base de données
     $connector = new PDOLink();
 
         //2ème : Faire la requête
@@ -36,6 +37,7 @@ else
 
         ?>
         <meta http-equiv="refresh" content="3; URL=index.php">
+    <!-- Chargement -->
     <div class="preloader-wrapper big active">
         <div class="spinner-layer spinner-blue">
             <div class="circle-clipper left">

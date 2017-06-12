@@ -12,6 +12,7 @@ if($_SESSION['connected'] == 0 || $_SESSION['admin'] == 0)
 {
     echo '<meta http-equiv="refresh" content="0; URL=index.php">';
 }
+//Sinon lance le code de la page
 else
 {
 ?>
@@ -40,6 +41,7 @@ include "include/nav.php";
     </div>
     <div class="container">
         <div class="section">
+            <!-- Tableau avec toutes les réservations demandées par les utilisateurs -->
             <table class="responsive-table">
                 <thead>
                 <tr>

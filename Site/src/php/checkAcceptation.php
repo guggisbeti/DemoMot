@@ -79,7 +79,8 @@ else {
                         <label for="end" class="col-sm-2 control-label">Date de fin</label>
                         <div class="col-sm-10">
                             <?php
-                                if (strstr($date['resEndDate'], "-")) {
+                                //Si la date est de type YYYY-MM-DD la passe en YYYY-MM-DD + 1 (exemple : 2017-06-12 devient alors 2017-06-13) afin de l'insérer juste dans le calendrier
+                               if (strstr($date['resEndDate'], "-")) {
                                     $date = preg_split("/[\/]|[-]+/", $date['resEndDate']);
                                     $date = $date[0] . "-" . $date[1] . "-" . ($date[2] + 1);
                                 }
@@ -98,6 +99,7 @@ else {
             </form>
         </div>
     </main>
+    <!-- JavaScript Materialize pour le Select du formulaire -->
     <script>
         $(document).ready(function () {
             $('select').material_select();

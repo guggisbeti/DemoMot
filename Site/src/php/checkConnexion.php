@@ -19,6 +19,7 @@ if($login == "" || $password == "" )
     echo "Certains champs sont vides, veuillez les remplir.";
     ?>
     <meta http-equiv="refresh" content="2; URL=connexion.php">
+    <!-- Chargement -->
     <div class="preloader-wrapper big active">
     <div class="spinner-layer spinner-blue">
         <div class="circle-clipper left">
@@ -71,6 +72,7 @@ else
             echo "Bonjour " . $pass['useFirstName'] . " " . $pass['useName'] . "<br> Vous allez être redirigé vers la page d'accueil";
             ?>
             <meta http-equiv="refresh" content="2; URL=index.php">
+            <!-- Chargement -->
             <div class="preloader-wrapper big active">
             <div class="spinner-layer spinner-blue">
                 <div class="circle-clipper left">
@@ -90,6 +92,7 @@ else
             echo "Login ou mot de passe incorrect";
             ?>
             <meta http-equiv="refresh" content="2; URL=connexion.php">
+            <!-- Chargement -->
             <div class="preloader-wrapper big active">
                 <div class="spinner-layer spinner-blue">
                     <div class="circle-clipper left">

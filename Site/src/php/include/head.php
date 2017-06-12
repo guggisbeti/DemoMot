@@ -26,8 +26,5 @@
 
          <link href='../../calendar/css/fullcalendar.css' rel='stylesheet' />
 
-
     <script src='../js/calendar.js'></script>
-
-
 </head>

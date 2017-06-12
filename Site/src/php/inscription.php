@@ -44,6 +44,7 @@ include "include/nav.php";
                 <div class="row">
                     <!-- Champ nom -->
                     <div class="input-field col s6">
+                        <!-- Si l'URL est modify ou reTry ajoute le champ nom dans la valeur -->
                         <input <?php if ($_GET['type'] == "modify" || $_GET['type'] == "reTry") {
                             echo "value=\"$name\"";
                         } ?> id="name" type="text" name="name" class="validate">
@@ -51,6 +52,7 @@ include "include/nav.php";
                     </div>
                     <!-- Champ Prénom -->
                     <div class="input-field col s6">
+                        <!-- Si l'URL est modify ou reTry ajoute le champ prénom dans la valeur -->
                         <input <?php if ($_GET['type'] == "modify" || $_GET['type'] == "reTry") {
                             echo "value=\"$firstname\"";
                         } ?> id="firstname" type="text" name="firstname" class="validate">
@@ -60,6 +62,7 @@ include "include/nav.php";
                 <div class="row">
                     <!-- Champ age -->
                     <div class="input-field col s6">
+                        <!-- Si l'URL est modify ou reTry ajoute le champ age dans la valeur -->
                         <input <?php if ($_GET['type'] == "modify" || $_GET['type'] == "reTry") {
                             echo "value=\"$age\"";
                         } ?> id="age" type="text" name="age" class="validate">
@@ -67,13 +70,14 @@ include "include/nav.php";
                     </div>
                     <!-- Champ email -->
                     <div class="input-field col s6">
+                        <!-- Si l'URL est modify ou reTry ajoute le champ email dans la valeur -->
                         <input <?php if ($_GET['type'] == "modify" || $_GET['type'] == "reTry") {
                             echo "value=\"$email\"";
                         } ?> id="email" type="text" name="email" class="validate">
                         <label for="email">Adresse e-mail*</label>
                     </div>
                 </div>
-                <!-- Champ ami de -->
+                <!-- Champ ami de (4 if afin de vérifier si l'URL est modify ou reTry ET qu'il est l'ami d'un des 4 -> met le bouton radio directement coché)-->
                 <div class="radioButton" id="switch">
                     <p class="grey-text">Vous êtes l'ami de* :</p>
                     <p>
@@ -104,6 +108,7 @@ include "include/nav.php";
                 <!-- Champ login -->
                 <div class="row">
                     <div class="input-field col s12">
+                        <!-- Si l'URL est modify ou reTry ajoute le champ login dans la valeur -->
                         <input <?php if ($_GET['type'] == "modify" || $_GET['type'] == "reTry") {
                             echo "value=\"$login\"";
                         } ?> id="login" type="text" name="login" class="validate">
@@ -113,6 +118,7 @@ include "include/nav.php";
                 <!-- Champ mot de passe -->
                 <div class="row">
                     <div class="input-field col s12">
+                        <!-- Aucun if pour le mot de passe -->
                         <input id="password" type="password" name="password" class="validate">
                         <label for="password">Mot de passe*</label>
                     </div>

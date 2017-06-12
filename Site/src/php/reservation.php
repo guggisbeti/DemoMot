@@ -34,9 +34,11 @@ include "include/nav.php";
             <div class="row">
                 <h3 class="red-text text-darken-4">Réservation</h3>
                 <!-- champ pour la Date de début -->
-                <input type="date" name="startDate" class="datepicker">
+                <label>Date de début
+                <input type="date" name="startDate" class="datepicker"></label>
                 <!-- champ pour la Date de fin -->
-                <input type="date" name="endDate" class="datepicker">
+                <label>Date de fin
+                <input type="date" name="endDate" class="datepicker"></label>
                 <!-- champ caché pour envoyer l'id -->
                 <input type="hidden" name="id" value="<?php echo $id ?>">
 

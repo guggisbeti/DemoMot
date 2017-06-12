@@ -18,7 +18,6 @@ else {
 	//Si la checkbox delete a une valeur
 	if (isset($_POST['delete']) && isset($_POST['id'])) {
 
-
 		$id = $_POST['id'];
 
 		$sql = "DELETE FROM events WHERE id = $id";

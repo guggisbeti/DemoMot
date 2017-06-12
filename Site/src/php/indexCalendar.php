@@ -14,6 +14,7 @@ if($_SESSION['connected'] == 0)
 }
 else
 {
+//Inclusion de la bdd
 require_once('bdd.php');
 
 //Requête SQL
