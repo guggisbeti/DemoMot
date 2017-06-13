@@ -1,3 +1,9 @@
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
+
     <footer id="footerBar" class="page-footer red darken-4">
         <div class="container">
             <div class="row">
@@ -31,9 +37,6 @@
         <div class="footer-copyright">
             <div id="copyrightFooter" class="container">
                 © 2017 Copyright par Timothée Guggisberg
-            </div>
-            <div class="container left">
-                <a class="white-text left" href="disconnexion.php">Vidage du cache</a>
             </div>
         </div>
     </footer>

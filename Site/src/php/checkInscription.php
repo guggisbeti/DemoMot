@@ -12,7 +12,7 @@ include "include/head.php";
 //Prise dans l'URL de l'id ainsi que du type
 //inscription : si il vient de la page inscription sans faire de faute
 //reTry : si il à fait faux, renvoi alors à la page d'insription avec les données
-//modify : si il vient depuis sont profil avec le bouton Edit afin de faire un Update plutot qu'un insert
+//modify : si il vient depuis son profil avec le bouton Editer afin de faire un Update plutot qu'un insert
 $id = $_SESSION['user'];
 $type = $_GET['type'];
 
@@ -22,7 +22,7 @@ $firstname = htmlspecialchars(trim($_POST['firstname']));
 $age = htmlspecialchars(trim($_POST['age']));
 $email = htmlspecialchars(trim($_POST['email']));
 $login = htmlspecialchars(trim($_POST['login']));
-$password = htmlspecialchars(trim($_POST['password']));
+$password = htmlspecialchars($_POST['password']);
 //Si le bouton radio a une valeur
 if(isset($_POST['friendOf']) == 1) {
     $friendOf = $_POST['friendOf'];
@@ -85,6 +85,39 @@ else
         <?php
         $check = false;
     }
+
+    //Instanciation de la classe PDOLink
+    $connectorSel = new PDOLink();
+
+    //2ème : Faire la requête
+    //Inserer la requête dans un variable "query"
+    $querySel = "SELECT `useLogin` FROM `t_user`";
+
+    //Lance la requête
+    $reqSel = $connectorSel->executeQuery($querySel);
+
+    //Préparation des données à être affichées
+    $logins = $connectorSel->prepareData($reqSel);
+
+    //Foreach de tout les logins
+    foreach($logins as $dblogin)
+    {
+        //Si le login mis dans le formulaire est le même qu'un de la base de donnée, lui demande de changer de login
+        if($login == $dblogin['useLogin'])
+        {
+            echo 'Le login est déjà pris, veuillez en prendre un autre<br>';
+            ?>
+            <meta http-equiv="refresh" content="3; URL=inscription.php?type=reTry&login=<?php echo $login ?>&friendOf=<?php echo $friendOf ?>&name=<?php echo $name ?>&firstname=<?php echo $firstname ?>&age=<?php echo $age ?>&email=<?php echo $email ?>">
+            <?php
+            $check = false;
+        }
+    }
+
+    //Ecrase la requête
+    $connectorSel->closeCursor($reqSel);
+    //Stop la connexion
+    $connectorSel->destructObject();
+
     //Si tous les champs sont juste
     if($check == true)
     {
