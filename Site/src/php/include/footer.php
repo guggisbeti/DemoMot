@@ -15,20 +15,20 @@
                 <div class="col l3 s12">
                 <h5 class="white-text">Aide technique</h5>
                 <ul>
-                    <li><a class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
-                    <li><a class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
-                    <li><a class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
-                    <li><a class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
+                    <li><a target="_blank" class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
+                    <li><a target="_blank" class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
+                    <li><a target="_blank" class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
+                    <li><a target="_blank" class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
                 </ul>
             </div>
             <!-- Adresse email pour le contact -->
             <div class="col l3 s12">
                 <h5 class="white-text">Contact</h5>
                 <ul>
-                    <li><a class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
-                    <li><a class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
-                    <li><a class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
-                    <li><a class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
+                    <li><a target="_blank" class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
+                    <li><a target="_blank" class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
+                    <li><a target="_blank" class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
+                    <li><a target="_blank" class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
                 </ul>
             </div>
             </div>

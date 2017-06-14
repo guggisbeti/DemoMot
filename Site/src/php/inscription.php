@@ -7,7 +7,7 @@ session_start();
  * Brief : Page d'inscription au site web
  */
 
-//Si le type étant dans l'URL est NULL, renvois sur la page d'accueil
+//Si le type étant dans l'URL est NULL, renvoi sur la page d'accueil
 if(isset($_GET['type']) == 0) {
     echo '<meta http-equiv="refresh" content="0; URL=index.php">';
 }

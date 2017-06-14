@@ -39,13 +39,13 @@ include "include/nav.php";
             <br><br>
             <!-- Affichage de toutes les images du chalet avec une petite désciption pour chaque photo -->
             <img class="materialboxed left" width="650" height="432" src="../../resources/image/slider1.JPG">
-            <h1 class="blue-grey-text text-darken-2 left" id="titleGallery">Hello</h1>
+            <h1 class="blue-grey-text text-darken-2 left" id="titleGallery">les Chaux</h1>
             <img class="materialboxed right" width="650" height="432" src="../../resources/image/slider2.JPG">
-            <h1 class="red-text text-darken-3 right" id="titleGallery">Hello</h1>
-            <img class="materialboxed left" width="650" height="432" src="../../resources/image/slider3.JPG">
-            <h1 class="blue-grey-text text-darken-2 left" id="titleGallery">Hello</h1>
+            <h1 class="red-text text-darken-3 right" id="titleGallery">Anzeindaz</h1>
+            <img class="materialboxed left" width="650" height="432"    src="../../resources/image/slider3.JPG">
+            <h1 class="blue-grey-text text-darken-2 left" id="titleGallery">Miroir d'Argentine</h1>
             <img class="materialboxed right" width="650" height="432" src="../../resources/image/slider4.JPG">
-            <h1 class="red-text text-darken-3 right" id="titleGallery">Hello</h1>
+            <h1 class="red-text text-darken-3 right" id="titleGallery">Miroir d'Argentine</h1>
 
         </div>
     </div>

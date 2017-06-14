@@ -55,7 +55,7 @@ session_start();
 						  <li>
 							<img src="../../resources/image/slider3.JPG">
 							<div class="caption right-align">
-							  <h3>Vallée du Miroir d'Argentine</h3>
+							  <h3>Lion du Miroir d'Argentine</h3>
 							</div>
 						  </li>
 						</ul>

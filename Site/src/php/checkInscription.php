@@ -103,7 +103,7 @@ else
     foreach($logins as $dblogin)
     {
         //Si le login mis dans le formulaire est le même qu'un de la base de donnée, lui demande de changer de login
-        if($login == $dblogin['useLogin'])
+        if($login == $dblogin['useLogin'] && $_GET['type'] != "modify")
         {
             echo 'Le login est déjà pris, veuillez en prendre un autre<br>';
             ?>

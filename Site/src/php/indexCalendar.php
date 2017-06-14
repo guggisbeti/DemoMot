@@ -80,7 +80,7 @@ include "include/nav.php";
 									<label for="color" class="col-sm-2 control-label">Color</label>
 									<div class="col-sm-10">
 										<select name="color" class="form-control" id="color">
-											<option value="">Couleur</option>
+											<option value="" class="disabled selected">Couleur</option>
 											<option value="#0071c5">Blaise Guggisberg - Bleu</option>
 											<option value="#40E0D0">Yves Guggisberg - Turquoise</option>
 											<option value="#FF0000">Patrick Guggisberg - Rouge</option>
@@ -137,7 +137,7 @@ include "include/nav.php";
 							<label for="color" class="col-sm-2 control-label">Color</label>
 							<div class="col-sm-10">
 								<select name="color" class="form-control" id="color">
-									<option value="">Couleur</option>
+									<option value="" class="disabled selected">Couleur</option>
 									<option value="#0071c5">Blaise Guggisberg - Bleu</option>
 									<option value="#40E0D0">Yves Guggisberg - Turquoise</option>
 									<option value="#FF0000">Patrick Guggisberg - Rouge</option>
@@ -175,8 +175,12 @@ include "include/nav.php";
 	<script src='js/moment.min.js'></script>
 	<script src='js/fullcalendar.min.js'></script>
 		<script>
+			/*
+			// Fonction pour le calendrier fournit par Full Calendar afin d'ajouter des fonctionnalités au calendrier (boutons, automatisme)
+			 */
 			$(document).ready(function () {
 
+				//Bouton + Titre au dessus du Calendrier
 				$('#calendar').fullCalendar({
 					header: {
 						left: 'prev,next today',
@@ -189,6 +193,7 @@ include "include/nav.php";
 					selectHelper: true,
 					select: function (start, end) {
 
+						//Met un format au date : YYYY-MM-DD HH:mm:ss
 						$('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD HH:mm:ss'));
 						$('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD HH:mm:ss'));
 						$('#ModalAdd').modal('show');
@@ -238,8 +243,12 @@ include "include/nav.php";
 					]
 				});
 				<?php
+				//Peut seulement aaccèder a cette fonction si il est admin
 				if($_SESSION['admin'] == 1) {
 				?>
+				/*
+				// Fonction pour editer le calendrier (Mouvement ou allongement)
+				 */
 				function edit(event) {
 					start = event.start.format('YYYY-MM-DD HH:mm:ss');
 					if (event.end) {

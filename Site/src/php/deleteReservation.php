@@ -9,6 +9,7 @@
 //Inclusion de la classe PDOLink
 include 'include/PDOLink.php';
 $id = $_GET['id'];
+$idUser = $_GET['idUser'];
 $connector = new PDOLink();
 
 //2ème : Faire la requête
@@ -25,4 +26,4 @@ $connector->destructObject();
 
 ?>
 <!-- Redirection instantanée sur la page des reservations -->
-<meta http-equiv="refresh" content="0; URL=acceptReservation.php">
+<meta http-equiv="refresh" content="0; URL=acceptReservation.php?type=sendEmail&idUser=<?php echo $idUser ?>">

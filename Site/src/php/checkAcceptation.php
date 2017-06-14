@@ -41,7 +41,7 @@ else {
                     <label for="color" class="col-sm-2 control-label">Color</label>
                     <div class="input-field">
                         <select name="color" class="form-control" id="color">
-                            <option value="" disabled selected>Couleur</option>
+                            <option value="" class="disabled selected">Couleur</option>
                             <option value="#0071c5">Blaise Guggisberg - Bleu</option>
                             <option value="#40E0D0">Yves Guggisberg - Turquoise</option>
                             <option value="#FF0000">Patrick Guggisberg - Rouge</option>
@@ -92,7 +92,7 @@ else {
                     <?php
                 }
                 ?>
-                <a href="acceptReservation.php" class="waves-effect waves-light btn blue-grey darken-2">Annuler</a>
+                <a href="acceptReservation.php?type=return" class="waves-effect waves-light btn blue-grey darken-2">Annuler</a>
                 <button id="saveButtonCalendar" type="submit" class="waves-effect waves-light btn red darken-3">
                     Sauvegarder
                 </button>
@@ -105,7 +105,43 @@ else {
             $('select').material_select();
         });
     </script>
+    <footer id="footerBar" class="page-footer red darken-4">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Création</h5>
+                    <p class="grey-text text-lighten-4">Bonjour à tous, je suis apprenti informaticien, n'hésitez pas à me conseiller en cas de bugs ou autres problèmes trouvés sur le site, le template du site vient du Framework <a target="_blank" href="http://materializecss.com/" class="white-text">Materialize</a></p>
+                </div>
+                <!-- Adresse email pour l'aide technique -->
+                <div class="col l3 s12">
+                    <h5 class="white-text">Aide technique</h5>
+                    <ul>
+                        <li><a class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
+                        <li><a class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
+                        <li><a class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
+                        <li><a class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
+                    </ul>
+                </div>
+                <!-- Adresse email pour le contact -->
+                <div class="col l3 s12">
+                    <h5 class="white-text">Contact</h5>
+                    <ul>
+                        <li><a class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
+                        <li><a class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
+                        <li><a class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
+                        <li><a class="white-text" href="mailto:timguggis@yahoo.fr">timguggis@yahoo.fr</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright du site -->
+        <div class="footer-copyright">
+            <div id="copyrightFooter" class="container">
+                © 2017 Copyright par Timothée Guggisberg
+            </div>
+        </div>
+    </footer>
+</body>
     <?php
-    include "include/footer.php";
 }
 ?>

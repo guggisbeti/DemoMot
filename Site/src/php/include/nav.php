@@ -16,7 +16,7 @@ else {
                     <li><a href="indexCalendar.php"><i class="material-icons left">today</i>Calendrier</a></li>
                 </ul>
                 <ul class="right hide-on-med-and-down waves-effect">
-                    <li><a href="acceptReservation.php"><i class="material-icons left">vpn_key</i>Plages horaires
+                    <li><a href="acceptReservation.php?type=reservation"><i class="material-icons left">vpn_key</i>Plages horaires
                             demandées</a></li>
                 </ul>
                 <ul class="right hide-on-med-and-down waves-effect">
@@ -92,7 +92,7 @@ else {
                     ?>
                     <li><a class="btn red darken-3" href="indexCalendar.php">Calendrier</a></li>
 
-                    <li><a class="btn red darken-3" href="acceptReservation.php">Réservation</a></li>
+                    <li><a class="btn red darken-3" href="acceptReservation.php?type=reservation">Réservation</a></li>
 
                     <li><a class="btn red darken-3" href="message.php">Message</a></li>
                     <?php
@@ -110,6 +110,8 @@ else {
                         <?php
                     }
                     ?>
+                    <li><a class="btn red darken-3" href="profile.php">Profil</a></li>
+                    <li><a class="btn red darken-3" href="presentation.php">Présentation</a></li>
                     <li><a class="btn red darken-3" href="disconnexion.php">Déconnexion</a></li>
                     <?php
                 } else {

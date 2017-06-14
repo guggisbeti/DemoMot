@@ -41,6 +41,45 @@ include "include/nav.php";
     </div>
     <div class="container">
         <div class="section">
+            <table>
+                <?php
+                if($_GET['type'] == "sendEmail" && isset($_GET['idUser']))
+                {
+                $idUser = $_GET['idUser'];
+
+                $connectorSel = new PDOLink();
+
+                //2ème : Faire la requête
+                //Inserer la requête dans un variable "query"
+                $querySel = "SELECT `useEmail`, `useName`, `useFirstName` FROM `t_user` WHERE idUser = $idUser";
+
+                //Lance la requête
+                $reqSel = $connectorSel->executeQuery($querySel);
+
+                $emails = $connectorSel->prepareData($reqSel);
+
+                    //Foreach afin d'écrire une phrase à l'utilisateur pour qu'il puisse envoyer un email
+                    foreach ($emails as $email) {
+                    ?>
+                    <tr>
+                        <td>
+                            Vous venez de supprimer <?php echo $email['useFirstName'] . " " . $email['useName'] . " (email : " . $email['useEmail'] . ")"?>, voulez-vous lui envoyer un email pour l'informer ?
+                        </td>
+                        <td>
+                            <a onclick="redirect()" class="btn blue" target="_blank" href="mailto:<?php echo $email['useEmail'] ?>?subject=Réservation du chalet Yamilé&body=Bonjour <?php echo $email['useFirstName'] . " " . $email['useName'] ?>, nous vous indiquons que votre demande a malheureusement été refusée, vous pouvez toujours réessayer en vérifiant une plage horaire vide sur le calendrier">
+                                Envoyer un email
+                            </a>
+                        </td>
+                    </tr>
+                    <?php
+                    }
+                    //Ecrase la requête
+                    $connectorSel->closeCursor($reqSel);
+                    //Stop la connexion
+                    $connectorSel->destructObject();
+                }
+                ?>
+            </table>
             <!-- Tableau avec toutes les réservations demandées par les utilisateurs -->
             <table class="responsive-table">
                 <thead>
@@ -68,6 +107,7 @@ include "include/nav.php";
 
                 $data = $connector->prepareData($req);
 
+
                 //Foreach pour expliquer les détail de la demande
                 foreach ($data as $details) {
                     ?>
@@ -94,7 +134,7 @@ include "include/nav.php";
                         <!-- Bouton changeant de couleur une fois sur deux avec la variable $changeColor -->
                         <td><a href="checkAcceptation.php?id=<?php echo $details['idReservation'] ?>"
                                id="download-button" class="btn waves-effect waves-light blue-grey darken-2">Accepter</a></td>
-                        <td><a onclick="return confirm('Etes-vous sur de vouloir supprimer cette demande ?')" href="deleteReservation.php?id=<?php echo $details['idReservation'] ?>"
+                        <td><a onclick="return confirm('Etes-vous sur de vouloir supprimer cette demande ?')" href="deleteReservation.php?id=<?php echo $details['idReservation'] ?>&idUser=<?php echo $details['idUser'] ?>"
                                 id="download-button" class="btn waves-effect waves-light red darken-3">Refuser</a></td>
                     </tr>
                     <?php
@@ -107,6 +147,15 @@ include "include/nav.php";
 </main>
 <br>
 <br>
+<script>
+    /*
+    Fonction renvoyant sur la même page mais avec un autre type
+     */
+    function redirect()
+    {
+        window.location.href = "acceptReservation.php?type=reservation";
+    }
+</script>
 
 <?php
 //Ecrase la requête
