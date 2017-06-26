@@ -82,7 +82,34 @@ else {
                                 //Si la date est de type YYYY-MM-DD la passe en YYYY-MM-DD + 1 (exemple : 2017-06-12 devient alors 2017-06-13) afin de l'insérer juste dans le calendrier
                                if (strstr($date['resEndDate'], "-")) {
                                     $date = preg_split("/[\/]|[-]+/", $date['resEndDate']);
-                                    $date = $date[0] . "-" . $date[1] . "-" . ($date[2] + 1);
+                                   //Si c'est le 31 décembre, passe à l'année d'après
+                                   if ($date[1] == 12 && $date[2] == 31) {
+                                       $date = ($date[0] + 1) . "-" . (01) . "-" . (01);
+                                   }
+                                    //Si il demande le dernier jour d'un mois -> deviendrait donc 32 -> corrige cela en mettant un plus 1 au mois et un 1 au jour
+                                    elseif ($date[2] == 31)
+                                    {
+                                        $date = $date[0] . "-" . ($date[1] + 1) . "-" . (01);
+                                    }
+                                    //Même chose si la fin du mois est le 30
+                                    elseif ($date[2] == 30 && $date[1] == 4 || $date[1] == 6 || $date[1] == 9 || $date[1] == 11)
+                                    {
+                                        $date = $date[0] . "-" . ($date[1] + 1) . "-" . (01);
+                                    }
+                                    //Exeption du Février qui finit le 28
+                                    elseif ($date[2] == 28 && $date[1] == 2)
+                                    {
+                                        $date = $date[0] . "-" . ($date[1] + 1) . "-" . (01);
+                                    }
+                                    //2ème exeption du février durant les années bissextiles
+                                    elseif ($date[2] == 29 && $date[1] == 2)
+                                    {
+                                        $date = $date[0] . "-" . ($date[1] + 1) . "-" . (01);
+                                    }
+                                    //Si il n'est rien de cela, fait la conversion basique
+                                    else {
+                                        $date = $date[0] . "-" . $date[1] . "-" . ($date[2] + 1);
+                                    }
                                 }
                             ?>
                             <input type="text" name="end" class="form-control" id="end"

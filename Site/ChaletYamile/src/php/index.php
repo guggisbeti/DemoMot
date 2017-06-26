@@ -63,7 +63,7 @@ session_start();
 							<img src="../../resources/image/slider1.JPG">
 							<div class="caption left-align">
 							  <h3>Les Chaux</h3>
-							  <h5 class="light grey-text text-lighten-3">Mer de nuage sur les Chaux</h5>
+							  <h5 class="light grey-text text-lighten-3">Mer de nuages sur les Chaux</h5>
 							</div>
 						  </li>
 						  <li>

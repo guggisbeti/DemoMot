@@ -89,7 +89,6 @@ else
     //Instanciation de la classe PDOLink
     $connectorSel = new PDOLink();
 
-    //2ème : Faire la requête
     //Inserer la requête dans un variable "query"
     $querySel = "SELECT `useLogin` FROM `t_user`";
 
