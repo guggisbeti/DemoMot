@@ -1,0 +1,86 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+#inscriptionForm {
+    padding-left: 20%;
+    padding-right: 20%;
+    padding-top: 5%;
+}
+
+.radioButton {
+    padding-left: 1vh;
+}
+
+#connexionForm {
+    padding-left: 39%;
+    padding-right: 39%;
+    padding-top: 10%;
+}
+
+#cardProfile {
+    margin-left: 33%;
+}
+
+#titleGallery {
+    margin-top: 19vh;
+}
+
+#copyrightFooter {
+	margin-left: 5vh;
+}
+
+#calendar {
+    max-width: 900px;
+}
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+
+#saveButtonCalendar {
+    margin-left: 2vh;
+}
+
+#deleteButtonCalendar {
+    margin-right: 2vh;
+}
+
+ul.dropdown-content.select-dropdown li span {
+    color: #37474f;
+}
+
+#cardMessage {
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+#navBar a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+#footerBar a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+.slider .slides {
+    background-color: transparent;
+    margin: 0;
+    height: 400px;
+}
+
+.slider .slides li img {
+    height: 100%;
+    width: 100%;
+    background-position: center;
+    background-size:100% auto;
+    background-repeat: no-repeat;
+}
